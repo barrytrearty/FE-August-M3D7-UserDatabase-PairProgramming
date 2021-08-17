@@ -17,11 +17,49 @@
     />
     <style>
       body {
-        color: white;
+        color: black;
       }
     </style>
   </head>
   <body>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <button
+          id="selector-button"
+          class="btn btn-outline-secondary dropdown-toggle"
+          type="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Choose
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Name</a>
+          <div role="separator" class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Username</a>
+          <div role="separator" class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Email</a>
+        </div>
+      </div>
+      <input
+        id="userSearch"
+        type="text"
+        class="form-control"
+        aria-label="Text input with dropdown button"
+        placeholder="Search users"
+        onchange="filterUsers(this.value)"
+      />
+    </div>
+    <button
+      type="button"
+      class="btn btn-primary btn-lg"
+      onclick="onlyTheNames()"
+    >
+      Names
+    </button>
+    <button type="button" class="btn btn-secondary btn-lg">Addresses</button>
+    <button type="button" class="btn btn-secondary btn-lg">Sort</button>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
